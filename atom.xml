@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-30T10:31:02.000Z</updated>
+  <updated>2016-06-23T04:27:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,29 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo教程</title>
-    <link href="http://yoursite.com/2016/03/30/Hexo%E6%95%99%E7%A8%8B/"/>
-    <id>http://yoursite.com/2016/03/30/Hexo教程/</id>
-    <published>2016-03-30T10:31:02.000Z</published>
-    <updated>2016-03-30T10:31:02.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title></title>
     <link href="http://yoursite.com/2016/03/24/hello-world/"/>
     <id>http://yoursite.com/2016/03/24/hello-world/</id>
     <published>2016-03-24T08:12:48.000Z</published>
-    <updated>2016-06-23T01:22:30.000Z</updated>
+    <updated>2016-06-23T04:27:05.000Z</updated>
     
-    <content type="html">&lt;p&gt; Here at PrintShare we are committed to protecting your privacy and data as far as we legally can. We have seen Citizenfour and we care. Most privacy policies scare the bejesus out of us, so we’ve tried to put this in human terms. Let’s do this!&lt;/p&gt;
+    <content type="html">&lt;p&gt;  Here at PrintShare we are committed to protecting your privacy and data as far as we legally can. We have seen Citizenfour and we care.&lt;br&gt;  Most privacy policies scare the bejesus out of us, so we’ve tried to put this in human terms. Let’s do this!&lt;/p&gt;
 &lt;h2 id=&quot;WHAT-INFORMATION-DO-WE-COLLECT&quot;&gt;&lt;a href=&quot;#WHAT-INFORMATION-DO-WE-COLLECT&quot; class=&quot;headerlink&quot; title=&quot;WHAT INFORMATION DO WE COLLECT?&quot;&gt;&lt;/a&gt;WHAT INFORMATION DO WE COLLECT?&lt;/h2&gt;&lt;p&gt;When you make an order with PrintShare there is certain information you provide us with to complete your order. This is:&lt;/p&gt;
 &lt;p&gt;• The name, address, and telephone number in your shipping details.&lt;br&gt;• The photos you have ordered for printing.&lt;br&gt;• Your email address and any emails you may have sent to us with product questions.&lt;/p&gt;
 &lt;p&gt;Additionally when you make an order we can access certain information which we may use to make our services better:&lt;/p&gt;
@@ -61,7 +45,7 @@
     
     <summary type="html">
     
-      &lt;p&gt; Here at PrintShare we are committed to protecting your privacy and data as far as we legally can. We have seen Citizenfour and we care. 
+      &lt;p&gt;  Here at PrintShare we are committed to protecting your privacy and data as far as we legally can. We have seen Citizenfour and we care.
     
     </summary>
     
