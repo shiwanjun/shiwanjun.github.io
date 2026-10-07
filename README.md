@@ -1,66 +1,39 @@
-# 拆开看
+# Chirpy Starter
 
-<https://shiwanjun.github.io/> —— summer 的博客。每一篇都是一份「拆解报告」：把值得研究的开源实现拆开看，把用得上的留下来。
+[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
+[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
-**无依赖、无构建。** 改完直接推，推完直接生效 —— GitHub Pages 托管的就是仓库根目录。唯一的第三方代码是自托管的 [marked](https://github.com/markedjs/marked)（MIT，35 KB），在浏览器端把 Markdown 渲染出来。
+A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
 
-## 加一篇文章
+## Why This Starter Exists
 
-两步：
+When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
 
-1. 新建 `posts/<slug>.md`，写 Markdown 正文；
-2. 在 [`posts.js`](posts.js) 数组**最前面**加一条（最新在最上，编号 `No.XX` 自动算）：
+To unlock all features, the following files must be present in your Jekyll site:
 
-```js
-{
-  slug: "my-first-teardown",          // 进链接 #/post/my-first-teardown
-  file: "posts/my-first-teardown.md",
-  date: "2026-10-08",
-  title: "这篇拆什么",
-  summary: "一句话说清它拆的是什么、留下了什么。",
-  tags: ["技能工程"],
-}
+```shell
+.
+├── _config.yml
+├── _plugins
+├── _tabs
+└── index.html
 ```
 
-推上去之前想本地看一眼：`python3 -m http.server`，开 `http://localhost:8000`（浏览器不允许 `file://` 下取回 `.md`，必须走 http）。
+This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
 
-## 写作原则
+## Usage
 
-- **只写拆过的** —— 没有动手拆开的实现，不写成文章。
-- **结论要能复现** —— 能跑的给配置，能抄的给代码，出处链回原作者。
-- **留下的才算数** —— 能复用的部分要变成自己的工具，文章记录的是「留下来」的那部分。
+Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-## 动效
+## Contributing
 
-全部手写 vanilla（无动画库）：标题逐字入场 + 指针斥力「拆开」效果、路由橙色扫描过场、滚动显现、无限关键词带、自定义十字光标、磁性按钮、纸张噪点。只动 transform/opacity；`prefers-reduced-motion` 下整体退化为静态。
+This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
 
-## 字体
+## License
 
-标题用 Noto Serif SC Black（SIL OFL），按当前出现的字切成子集（`assets/fonts/display-900.woff2`）。写了新文章出现新字后跑一次：
+This work is published under [MIT][mit] License.
 
-```sh
-python3 tools/subset.py
-```
-
-没跑也不会坏：新字落回系统衬线（宋体一系），观感接近，只是不那么一致。正文不加载 Web 字体 —— 苹方 / 雅黑本来就是好字体。
-
-## 结构
-
-```
-index.html    界面、样式、hash 路由、渲染 —— 全在这一个文件
-posts.js      文章清单 —— 加一篇只改它
-posts/*.md    正文（原样 Markdown）
-vendor/       marked.min.js —— 唯一的第三方代码
-assets/fonts/ 展示字体子集（tools/subset.py 生成）
-tools/        subset.py 切字
-favicon.svg   橙底「拆」字
-404.html      站点级 404（hash 路由下极少触发，兜底用）
-.nojekyll     跳过 Jekyll 处理，文件原样伺服
-```
-
-## 设计
-
-- 一个概念贯穿：**拆解报告**。编号（No.01…）、档案感的衬线大标题、拆解清单式的分隔线。
-- 两种颜色各管一件事：墨色是叙述，柑橘橙是我的判断 —— 强调、编号、链接、进度条。
-- 明暗双主题：默认跟随系统，手动切换后记住；`?theme=dark` 可强制（分享/验收用）。
-- 一页只做一件事：首页只负责把人分发到报告去，没有搜索、没有评论、没有统计。
+[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
+[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
+[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
+[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
