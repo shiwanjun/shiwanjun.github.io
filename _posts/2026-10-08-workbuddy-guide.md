@@ -11,7 +11,7 @@ pin: true
 
 这篇用一条完整的实操线把它们讲透。不堆功能清单，只回答三个问题：**它们各自解决什么、怎么用、怎么确认真的用上了。**
 
-![三个角色，一条流水线](/assets/img/workbuddy/overview.svg)
+![三个角色，一条流水线](/assets/img/workbuddy/overview.png)
 
 ## 一句话分清三个角色
 
@@ -31,7 +31,7 @@ pin: true
 
 ### 提问只说四件事
 
-![把任务说清楚，就四件事](/assets/img/workbuddy/ask.svg)
+![把任务说清楚，就四件事](/assets/img/workbuddy/ask.png)
 
 「帮我写个攻略」这种问法，得到的只会是泛泛而谈。说清四件事，结果立刻不一样——可以直接套用这个句式：
 
@@ -53,7 +53,7 @@ pin: true
 
 ## 技能：装了 ≠ 用了
 
-![技能四步](/assets/img/workbuddy/skill-flow.svg)
+![技能四步](/assets/img/workbuddy/skill-flow.png)
 
 ### 找：先定小目标，再去搜
 
@@ -83,7 +83,7 @@ pin: true
 
 ## 连接器：先有资料，再连桥
 
-![连接器](/assets/img/workbuddy/connector.svg)
+![连接器](/assets/img/workbuddy/connector.png)
 
 前面都是把资料直接贴进对话。但真实场景里，素材常常躺在别的应用里。连接器做的事，就是给 WorkBuddy 开一扇**有锁的门**。
 
@@ -121,12 +121,9 @@ pin: true
 
 ## 收尾
 
-![验收清单](/assets/img/workbuddy/checklist.svg)
+![验收清单](/assets/img/workbuddy/checklist.png)
 
 专家出主意、技能做成品、连接器取资料——三个角色各管一段，你负责把任务说清楚和最后验收。工具不在多，**先拿一个真实的小任务从头走到尾，比装十个技能都值。**
 
 下一次，可以试试让它把攻略直接变成一个能打开的网页行程页。
 
----
-
-**参考与致谢**：本文的实操路径参考了 Felix 的《WorkBuddy 小白上手教程②：专家、技能、连接器怎么用？》，案例与行文为本站重新组织。[原文地址](https://x.com/Felixlmjz/status/2108040780422205684)。
