@@ -1,6 +1,6 @@
 ---
 title: "WorkBuddy 上手实录：专家、技能、连接器到底怎么配合"
-date: 2026-10-08 20:00:00 +0800
+date: 2026-10-08 12:00:00 +0800
 description: 三个角色、一条流水线——用一份周末出游攻略的例子，把 WorkBuddy 的专家、技能、连接器从头到尾走通。
 categories: [教程]
 tags: [WorkBuddy, AI 工具]
