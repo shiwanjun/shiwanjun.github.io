@@ -1,0 +1,115 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* ═══════════ 阿喵的AI · 动效层 ═══════════
+   只动 transform/opacity；prefers-reduced-motion 下整体退化。 */
+:root { --fx: #D9480F; --fx-ease: cubic-bezier(.22,.68,.14,1); }
+[data-bs-theme="dark"] { --fx: #FFA94D; }
+
+/* —— 入场编排：侧栏 / 顶栏 / 内容 —— */
+@keyframes fx-fade-up { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
+@keyframes fx-slide-left { from { transform:translateX(-100%); } to { transform:none; } }
+@keyframes fx-slide-down { from { transform:translateY(-100%); } to { transform:none; } }
+
+#sidebar { animation: fx-slide-left .55s var(--fx-ease) both; }
+#topbar-wrapper { animation: fx-slide-down .5s var(--fx-ease) .08s both; }
+
+.card-wrapper { animation: fx-fade-up .6s var(--fx-ease) both; }
+.card-wrapper:nth-of-type(1) { animation-delay: .15s; }
+.card-wrapper:nth-of-type(2) { animation-delay: .24s; }
+.card-wrapper:nth-of-type(3) { animation-delay: .33s; }
+.card-wrapper:nth-of-type(n+4) { animation-delay: .4s; }
+
+.post-title, .post-meta, .post-content, .post-tail { animation: fx-fade-up .6s var(--fx-ease) both; }
+.post-title { animation-delay: .12s; }
+.post-meta { animation-delay: .22s; }
+.post-content { animation-delay: .3s; }
+.post-tail { animation-delay: .4s; }
+
+/* —— 阅读进度条（CSS 滚动时间线，零 JS） —— */
+@supports (animation-timeline: scroll()) {
+  body::before {
+    content: ""; position: fixed; top: 0; left: 0; z-index: 1200;
+    height: 3px; width: 100%; background: var(--fx);
+    transform-origin: left; transform: scaleX(0);
+    animation: fx-progress linear both; animation-timeline: scroll(root);
+  }
+  @keyframes fx-progress { to { transform: scaleX(1); } }
+
+  /* —— 内容滚动显现（进入视口 0→62% 区间完成） —— */
+  .post-content > * {
+    animation: fx-reveal linear both;
+    animation-timeline: view(); animation-range: entry 0% entry 62%;
+  }
+  @keyframes fx-reveal { from { opacity:.25; transform:translateY(12px); } to { opacity:1; transform:none; } }
+}
+
+/* —— 悬浮微交互 —— */
+.card-wrapper { transition: transform .3s var(--fx-ease), box-shadow .3s ease; }
+.card-wrapper:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
+.card-wrapper:hover .card-title { color: var(--fx); }
+
+#avatar { transition: transform .35s var(--fx-ease); }
+#avatar:hover { transform: scale(1.06) rotate(-4deg); }
+
+.site-title { transition: letter-spacing .3s ease, color .2s ease; }
+.site-title:hover { letter-spacing: .06em; color: var(--fx); }
+
+.post-tag { transition: background .25s ease, color .25s ease, border-color .25s ease !important; }
+.post-tag:hover { background: var(--fx) !important; border-color: var(--fx) !important; color: #fff !important; }
+
+.post-content p a, .post-content li a {
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0% 1.5px;
+  transition: background-size .35s ease, color .2s ease;
+}
+.post-content p a:hover, .post-content li a:hover { background-size: 100% 1.5px; color: var(--fx); }
+
+.post-content pre { transition: border-color .25s ease, transform .25s var(--fx-ease); }
+.post-content pre:hover { border-color: var(--fx); transform: translateY(-2px); }
+
+.post-content img { transition: transform .4s var(--fx-ease), box-shadow .4s ease; }
+.post-content img:hover { transform: scale(1.015); box-shadow: 0 10px 24px rgba(0,0,0,.15); }
+
+/* —— 标题逐字入场（fx.js 拆字） —— */
+.fx-ch {
+  display: inline-block; opacity: 0;
+  transform: translateY(.7em) rotate(4deg);
+  transition: opacity .5s ease calc(var(--i, 0)*.03s),
+              transform .6s var(--fx-ease) calc(var(--i, 0)*.03s);
+}
+.fx-in .fx-ch { opacity: 1; transform: none; }
+
+/* —— 关键词跑马灯（fx.js 注入首页） —— */
+.fx-ticker {
+  overflow: hidden; user-select: none;
+  border-top: 1px solid var(--card-border-color);
+  border-bottom: 1px solid var(--card-border-color);
+  margin: 1.75rem 0 .5rem;
+}
+.fx-ticker-track { display: inline-flex; white-space: nowrap; will-change: transform; animation: fx-tick 30s linear infinite; }
+.fx-ticker:hover .fx-ticker-track { animation-play-state: paused; }
+.fx-ticker span {
+  font-family: var(--mono-font-family, monospace); font-size: .78rem;
+  letter-spacing: .22em; color: var(--text-muted-color); padding: .8rem 0;
+}
+@keyframes fx-tick { to { transform: translateX(-50%); } }
+
+/* —— 减弱动效：全部退化为静态 —— */
+@media (prefers-reduced-motion: reduce) {
+  #sidebar, #topbar-wrapper, .card-wrapper, .post-title, .post-meta,
+  .post-content, .post-tail, .fx-ch, .post-content > * { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+  .fx-ticker-track { animation: none; }
+  body::before { display: none; }
+}

@@ -1,6 +1,6 @@
-# 拆开看
+# 阿喵的AI
 
-<https://shiwanjun.github.io/> —— summer 的博客，每一篇都是一份「拆解报告」：把值得研究的开源实现拆开看，把用得上的留下来。
+<https://shiwanjun.github.io/> —— 阿喵的AI 的博客，每一篇都是一份「拆解报告」：把值得研究的开源实现拆开看，把用得上的留下来。
 
 基于开源主题 [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy)（MIT）构建，跑在 GitHub Pages 上；这是 GitHub 原生的 Jekyll 静态博客方案。第一代手写版封存在 [`legacy-v1`](../../tree/legacy-v1) 分支。
 
